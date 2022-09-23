@@ -59,7 +59,10 @@ You found the correct password. Secret message is:
 FROM devopsdockeruh/simple-web-service:alpine
 CMD server
 ```
-`$ docker run web-server:latest`
+```console
+docker build -t web-server . 
+docker run .
+```
 
 ### 1.8
 [Dockerfile](1.8/Dockerfile)
@@ -70,7 +73,7 @@ CMD server
 
 ### Exercise 1.9
 ```console
-docker run -v $(pwd):/usr/src/app/ devopsdockeruh/simple-web-service
+docker run -v $(pwd):/usr/src/app/ devopsdockeruh/simple-web-service server
 ```
 
 ### Exercise 1.10: Ports open
@@ -103,3 +106,5 @@ docker run --rm -p 127.0.0.1:8080:8080 hello-backend
 
 [1.13/example-backend/Dockerfile](1.13/example-backend/Dockerfile)
 `docker run --rm -p 127.0.0.1:8080:8080 hello-backend`
+
+---
