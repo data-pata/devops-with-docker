@@ -1,0 +1,25 @@
+version: '3,8'
+
+services:
+  frontend:
+    build: ./example-frontend
+    depends_on:
+      - backend
+    ports: 
+      - "127.0.0.1:5000:5000"
+    # networks:
+      # - front-tier
+      # - back-tier
+    container_name: hello-frontend
+
+  backend:
+    build: ./example-backend
+    ports:
+      - "127.0.0.1:8080:8080"
+    # networks:
+      # - back-tier
+    container_name: hello-backend
+
+# networks:
+  # front-tier: {}
+  # back-tier: {}

@@ -73,7 +73,8 @@ docker run .
 
 ### Exercise 1.9
 ```console
-docker run -v $(pwd):/usr/src/app/ devopsdockeruh/simple-web-service server
+touch text.log
+docker run -v $(pwd)/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service server
 ```
 
 ### Exercise 1.10: Ports open
